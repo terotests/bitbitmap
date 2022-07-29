@@ -12,7 +12,6 @@ bitmap.drawRectangle({
   end: { x: 11, y: 7 },
 });
 
-console.log("Empty:");
 console.log(bitmap.getBitString());
 
 expect(

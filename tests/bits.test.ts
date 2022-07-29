@@ -156,7 +156,6 @@ describe("Test simple bitmap", () => {
     });
     */
 
-    console.log("Empty:");
     console.log(bitmap.getBitString());
 
     expect(bitmap.isCoordinateAtEmptyBlock({ x: 0, y: 0 })).to.be.false;
@@ -177,7 +176,6 @@ describe("Test simple bitmap", () => {
       end: { x: 11, y: 7 },
     });
 
-    console.log("Empty:");
     console.log(bitmap.getBitString());
 
     expect(

@@ -1,5 +1,6 @@
 /**
- * 8x8 pixels collision bitmap
+ *
+ *  One Uint32Array consists of following bits
  *
  *  0000 0000 (y:0, x:0-7)
  *  0000 0000 (y:1, x:0-7)
@@ -24,23 +25,20 @@ type Box = {
   end: Coordinate;
 };
 
-// nn.toString(2).padStart(8,'0')
-
 export const createBitmap = (width: number, height: number) => {
   const horizontalBlockCount = Math.ceil(width / 8);
   const verticalBlockCount = (height >> 2) + 1;
 
   const bitBuffer = new Uint32Array(horizontalBlockCount * verticalBlockCount);
 
+  bitBuffer.fill(0);
+
   const getIndex = (point: Coordinate) =>
     (point.y >> 2) * horizontalBlockCount + (point.x >> 3);
 
-  const str8 = (n: number) => n.toString(2).padStart(8, "0");
-  const str32 = (n: number) => n.toString(2).padStart(32, "0");
-
   const obj = {
     getArea: () => bitBuffer,
-
+    clear: () => bitBuffer.fill(0),
     getBitString: () => {
       const lines: string[] = [];
       for (let j = 0; j < height; j++) {

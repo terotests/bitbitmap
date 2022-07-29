@@ -8,8 +8,6 @@
  *  0000 0000
  */
 
-import { start } from "repl";
-
 type Coordinate = {
   x: number;
   y: number;

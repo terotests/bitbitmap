@@ -1,4 +1,21 @@
-# Collision Bitmap
+# Collision Mask
+
+1. Allocate buffer with dimensions `width` x `height`
+2. Draw rectangles using `drawRectangle` into buffer
+3. Hit test rectangle in the buffer
+
+```
+[
+  '0000000000000000',
+  '0100000000000000',
+  '0000000000000000',
+  '0000000000000000',
+  '0000000000000000',
+  '0000000001110000',
+  '0000000001110000',
+  '0000000001110000'
+]
+```
 
 ```typescript
 const bitmap = createBitmap(16, 8);
